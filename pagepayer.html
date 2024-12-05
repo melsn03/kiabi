@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-md fixed-top bg-body-tertiary-bs-red">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="image/kiabilogo.png" class="lol" alt="..." /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="pagenostshirts.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Nos t-shirts?
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="pagenfant.html">Enfants</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pagequi.html">Qui somme-nous?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+
+
+              <!-- popup -->
+
+
+
+              <button class="cart-icon" onmouseover="openPopup()"><img  src="image/panier.png" class="bouton2"
+                  alt="Panier" /></button>
+
+              <div class="popup-container" id="popup">
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+                <div class="popup-content">
+                  <div class="popup-title">Votre Panier</div>
+                  <div class="popup-item">
+                    <span class="popup-close2" onclick="lol">&times;</span>
+                    <span>Sweat rouge</span>
+                    <select>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <!-- Ajoutez d'autres options selon les besoins -->
+                    </select>
+                  </div>
+                  <button class="popup-btn" onclick="proceedToPayment()">Paiement</button>
+                </div>
+              </div>
+
+              <script>
+                function openPopup() {
+                  document.getElementById('popup').style.display = 'block';
+                }
+
+                function closePopup() {
+                  document.getElementById('popup').style.display = 'none';
+                }
+
+                function proceedToPayment() {
+                  alert('Redirection vers la page de paiement...');
+                  closePopup();
+                }
+              </script>
+
+
+              <!-- fin popup -->
+
+
+
+
+
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="image/connexion.png" id="connexion" class="cart-icon" alt="connexion" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <style>
+    .thank-you-container {
+      text-align: center;
+      margin-top: 50px;
+      padding: 50px 100px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border: 2px solid #007bff;
+    }
+
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      border: 2px solid #007bff;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .popup-container h2 {
+      color: #007bff;
+    }
+
+    .popup-container .btn {
+      margin-top: 20px;
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 500;
+    }
+
+    /* Style for form input fields */
+    .form-control {
+      margin-bottom: 15px;
+    }
+  </style>
+
+
+<br><br>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-5 shadow-lg rounded" style="width: 100%; max-width: 500px; background-color: #f8f9fa;">
+    <h2 class="text-center mb-4" style="font-family: 'Arial', sans-serif; color: #333;">PAIEMENT</h2>
+    <form id="payment-form">
+      <!-- Nom sur la carte -->
+      <div class="mb-4">
+        <label for="card-name" class="form-label" style="font-weight: bold;">Nom sur la carte</label>
+        <div class="input-group">
+          <input type="text" class="form-control rounded-pill" id="card-name" placeholder="Nom complet" required style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+          <span class="input-group-text" style="background-color: #f8f9fa; border: none;">
+            <i class="bi bi-person" style="color: #6c757d;"></i>
+          </span>
+        </div>
+      </div>
+
+      <!-- Numéro de carte -->
+      <div class="mb-4">
+        <label for="card-number" class="form-label" style="font-weight: bold;">Numéro de carte</label>
+        <div class="input-group">
+          <input type="text" class="form-control rounded-pill" id="card-number" placeholder="1234 5678 9876 5432" required style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+          <span class="input-group-text" style="background-color: #f8f9fa; border: none;">
+            <i class="bi bi-credit-card" style="color: #6c757d;"></i>
+          </span>
+        </div>
+      </div>
+
+      <!-- Date d'expiration et CVV -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <label for="expiry-date" class="form-label" style="font-weight: bold;">Date d'expiration</label>
+          <input type="text" class="form-control rounded-pill" id="expiry-date" placeholder="MM/AA" required style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        </div>
+        <div class="col-md-6 mb-4">
+          <label for="cvv" class="form-label" style="font-weight: bold;">CVV</label>
+          <input type="text" class="form-control rounded-pill" id="cvv" placeholder="123" required style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        </div>
+      </div>
+
+      <!-- Bouton de paiement -->
+      <button class="btn btn-primary rounded-pill px-5 py-3 w-100" style="font-size: 18px; box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3); transition: all 0.3s ease;" onclick="openPopup()">Payer maintenant</button>
+
+    </form>
+  </div>
+</div>
+
+<!-- Ajouter les icônes Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Ajouter les styles CSS pour l'animation des champs -->
+<style>
+  .form-control:focus {
+    border-color: #03097b;
+    box-shadow: 0 0 10px rgba(18, 145, 196, 0.5);
+  }
+
+  .btn:hover {
+    background-color: #090f65;
+    transform: translateY(-2px);
+  }
+
+  .input-group-text {
+    border-radius: 0 50px 50px 0;
+  }
+</style>
+
+  <br><br><br><br>
+  <!-- Popup and overlay -->
+  <div class="popup-overlay" id="popup-overlay"></div>
+  <div class="popup-container" id="popup-container">
+    <h2>Merci pour votre achat !</h2>
+
+    <!-- Payment Form -->
+  
+
+    <!-- Back to home button -->
+    <a href="index.html" class="btn btn-primary mt-3">Retour à l'accueil</a>
+    <button class="btn btn-secondary mt-3" onclick="closePopup()">Fermer</button>
+  </div>
+
+  <script>
+    // Function to open the popup
+    function openPopup() {
+      document.getElementById('popup-overlay').style.display = 'block';
+      document.getElementById('popup-container').style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById('popup-overlay').style.display = 'none';
+      document.getElementById('popup-container').style.display = 'none';
+    }
+
+    // Form submission handler
+    document.getElementById('payment-form').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent the form from submitting to a server
+
+      // Simulate a payment process
+      alert('Merci pour votre paiement. Votre commande a été traitée.');
+
+      // Close the popup after payment
+      closePopup();
+    });
+  </script>
+
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-body-tertiary-bs-light text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Communiquez avec nous sur les réseaux sociaux :</span>
+      <div class="social">
+      <!-- Left -->
+      <a href="https://www.instagram.com/kiabi.france/"> <img src="image/instagram (1).png" class="ress"></a>
+      <a href="https://fr.pinterest.com/kiabi/"> <img src="image/pinterest2.png" class="ress"></a>
+      <a href="https://www.facebook.com/pages/Kiabi-la-mode-a-petits-prix/239230237954 "> <img src="image/fb3.png" class="ress"></a>
+      <a href="https://twitter.com/KiabiFrance"> <img src="image/twitter.png" class="ress"></a>
+      </div class="social">
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>KIABI
+            </h6>
+            <p>
+              Kiabi vous accompagne et vous conseille
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Découvrir</h6>
+            
+              
+              </br>
+                <a class="nav-link dropdown-toggle mb-3" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false"> Nos t-shirts
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="pagenfant.html">Enfants</a>
+                  </li>
+                </ul>
+            <p>
+              <a href="pagenosbonsplans.html" class="text-reset">Nos bons plans</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Support</h6>
+            <p>
+              <a href="#!" class="text-reset">Aide</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">F.A.Q</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Mentions Légales</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Contact</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i>4 Rue Camille Desmoulins, 75011 Paris</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              kiabi@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i>09 73 21 99 84</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4 fw-bold" style="background-color: #151028; color: white;">
+      © 2023 KIABI
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/"></a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</body>
+
+</html>

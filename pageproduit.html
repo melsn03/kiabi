@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-md fixed-top bg-body-tertiary-bs-red">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="image/kiabilogo.png" class="lol" alt="..." /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="pagenostshirts.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Nos t-shirts?
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="pagenfant.html">Enfants</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pagequi.html">Qui somme-nous?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+
+
+              <!-- popup -->
+
+
+
+              <button class="cart-icon" onmouseover="openPopup()"><img  src="image/panier.png" class="bouton2"
+                  alt="Panier" /></button>
+
+              <div class="popup-container" id="popup">
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+                <div class="popup-content">
+                  <div class="popup-title">Votre Panier</div>
+                  <div class="popup-item">
+                    <span class="popup-close2" onclick="lol">&times;</span>
+                    <span>Sweat rouge</span>
+                    <select>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <!-- Ajoutez d'autres options selon les besoins -->
+                    </select>
+
+                  </div>
+                  <button class="popup-btn" onclick="proceedToPayment()">Paiement</button>
+                </div>
+              </div>
+
+              <script>
+                function openPopup() {
+                  document.getElementById('popup').style.display = 'block';
+                }
+
+                function closePopup() {
+                  document.getElementById('popup').style.display = 'none';
+                }
+
+                function proceedToPayment() {
+                  alert('Redirection vers la page de paiement...');
+                  closePopup();
+                }
+              </script>
+
+
+              <!-- fin popup -->
+
+
+
+
+
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="image/connexion.png" id="connexion" class="cart-icon" alt="connexion" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+<div class="container text-center w-100 d-flex" style="height: 60vh;">
+    <div class="col3"></br>
+      <h5 class="card-title" style="font-size: 35px;">PRODUIT</h5><br>
+        <h5 class="card-title">Sweat à col rond molletonné - Rouge</h5></br>
+        <p class="card-text">Sois la reine du confort avec ce sweat en molleton trop doux, parfait pour te cocooner à la maison ou pour créer un look décontracté. Composé de 70 % de coton pour une douceur incomparable et 30 % de polyester pour une meilleure résistance et durabilité, il allie confort et praticité pour t'accompagner en toutes circonstances.</p>
+        <p class="card-text">5€</p>
+
+
+        </br>
+
+          <select name="pets" id="pet-select" class="taille">
+            <option value="">TAILLE</option>
+            <option value="dog">XS</option>
+            <option value="cat">S</option>
+            <option value="hamster">M</option>
+            <option value="parrot">L</option>
+            <option value="spider">XL</option>
+            <option value="goldfish">2XL</option>
+          </select>
+        
+        
+
+        <button class="popup-btn" onclick="window.location.href='pagepanier.html';">AJOUTER AU PANIER</button> 
+        <span class="rating">★★★★☆</span><br><br><br><br><br><br>
+        <p>Avis (2)</p>
+    </div>
+
+
+  </br>
+    <div class="col4 ">
+      <img src="image/sweatrouge.jpg" class="w-50"/>
+    </div>
+
+
+    
+
+
+
+</div>
+
+<div>
+</br>
+  <div class="col5">
+
+  </br>
+    <div class="testimonial-container">
+      <div class="testimonial">
+          <h3>Client 1</h3>
+          <span class="rating">★★★★☆</span>
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam."</p>
+          <span class="date">Ajouté le 10 janvier 2023</span>
+      </div>
+  
+      <div class="testimonial">
+          <h3>Client 2</h3>
+          <span class="rating">★★★★☆</span>
+          <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."</p>
+          <span class="date">Ajouté le 15 janvier 2023</span>
+      </div>
+  </div>
+</br>
+
+  </div>
+  </div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary-bs-light text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Communiquez avec nous sur les réseaux sociaux :</span>
+    <div class="social">
+    <!-- Left -->
+    <a href="https://www.instagram.com/kiabi.france/"> <img src="image/instagram (1).png" class="ress"></a>
+    <a href="https://fr.pinterest.com/kiabi/"> <img src="image/pinterest2.png" class="ress"></a>
+    <a href="https://www.facebook.com/pages/Kiabi-la-mode-a-petits-prix/239230237954 "> <img src="image/fb3.png" class="ress"></a>
+    <a href="https://twitter.com/KiabiFrance"> <img src="image/twitter.png" class="ress"></a>
+    </div class="social">
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>KIABI
+          </h6>
+          <p>
+            Kiabi vous accompagne et vous conseille
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Découvrir</h6>
+          
+            
+            </br>
+              <a class="nav-link dropdown-toggle mb-3" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false"> Nos t-shirts
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="pagenfant.html">Enfants</a>
+                </li>
+              </ul>
+          <p>
+            <a href="pagenosbonsplans.html" class="text-reset">Nos bons plans</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Support</h6>
+          <p>
+            <a href="#!" class="text-reset">Aide</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">F.A.Q</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Mentions Légales</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Contact</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i>4 Rue Camille Desmoulins, 75011 Paris</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            kiabi@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i>09 73 21 99 84</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4 fw-bold" style="background-color: #151028; color: rgb(255, 255, 255);">
+    © 2023 KIABI
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/"></a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</body>
+
+</html>

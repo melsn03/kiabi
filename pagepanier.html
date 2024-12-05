@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-md fixed-top bg-body-tertiary-bs-red">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="image/kiabilogo.png" class="lol" alt="..." /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="pagenostshirts.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Nos t-shirts?
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="pagenfant.html">Enfants</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pagequi.html">Qui somme-nous?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+
+
+              <!-- popup -->
+
+
+
+              <button class="cart-icon" onmouseover="openPopup()"><img  src="image/panier.png" class="bouton2"
+                  alt="Panier" /></button>
+
+              <div class="popup-container" id="popup">
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+                <div class="popup-content">
+                  <div class="popup-title">Votre Panier</div>
+                  <div class="popup-item">
+                    <span class="popup-close2" onclick="lol">&times;</span>
+                    <span>Sweat rouge</span>
+                    <select>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <!-- Ajoutez d'autres options selon les besoins -->
+                    </select>
+                  </div>
+                  <button class="popup-btn" onclick="proceedToPayment()">Paiement</button>
+                </div>
+              </div>
+
+              <script>
+                function openPopup() {
+                  document.getElementById('popup').style.display = 'block';
+                }
+
+                function closePopup() {
+                  document.getElementById('popup').style.display = 'none';
+                }
+
+                function proceedToPayment() {
+                  alert('Redirection vers la page de paiement...');
+                  closePopup();
+                }
+              </script>
+
+
+              <!-- fin popup -->
+
+
+
+
+
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="image/connexion.png" id="connexion" class="cart-icon" alt="connexion" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .cart-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #f9f9f9;
+    }
+
+    .cart-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: auto;
+    }
+
+    .cart-item-details {
+      flex-grow: 1;
+      margin-left: 15px;
+    }
+
+    .cart-item-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    .cart-item-actions button {
+      margin-left: 10px;
+    }
+
+    .total-price {
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<br><br><br>
+  <div class="cart-container">
+    <h1 class="cart-title">Votre Panier</h1>
+
+    <!-- Liste des articles dans le panier -->
+    <div id="cart-items"></div>
+
+    <!-- Prix total -->
+    <div class="total-price">Total: <span id="total-price">0</span> €</div>
+
+    <!-- Bouton de paiement -->
+    <div class="text-end">
+      <button class="btn btn-primary" onclick="window.location.href='pagepayer.html';">Paiement</button>
+    </div>
+  </div>
+
+  <script>
+    // Exemple de produits dans le panier
+    const cart = [
+      { id: 1, name: 'Sweat à col rond molletonné - Rouge', price: 5, quantity: 1, img: 'image/sweatrouge.jpg' },
+    ];
+
+    // Fonction pour afficher les articles dans le panier
+    function renderCart() {
+      const cartItems = document.getElementById('cart-items');
+      const totalPriceElement = document.getElementById('total-price');
+      let totalPrice = 0;
+
+      cartItems.innerHTML = '';
+      cart.forEach((item, index) => {
+        totalPrice += item.price * item.quantity;
+        cartItems.innerHTML += `
+          <div class="cart-item">
+            <img src="${item.img}" alt="${item.name}" />
+            <div class="cart-item-details">
+              <strong>${item.name}</strong><br />
+              Prix: ${item.price} €<br />
+              Quantité: 
+              <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)" />
+            </div>
+            <div class="cart-item-actions">
+              <button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Supprimer</button>
+            </div>
+          </div>
+        `;
+      });
+
+      totalPriceElement.textContent = totalPrice.toFixed(2);
+    }
+
+    // Fonction pour mettre à jour la quantité d'un article
+    function updateQuantity(index, newQuantity) {
+      cart[index].quantity = parseInt(newQuantity);
+      renderCart();
+    }
+
+    // Fonction pour supprimer un article du panier
+    function removeItem(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    // Fonction de paiement
+    function checkout() {
+      alert('Merci pour votre achat !');
+    }
+
+    // Initialisation
+    renderCart();
+  </script>
+
+
+
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-body-tertiary-bs-light text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Communiquez avec nous sur les réseaux sociaux :</span>
+      <div class="social">
+      <!-- Left -->
+      <a href="https://www.instagram.com/kiabi.france/"> <img src="image/instagram (1).png" class="ress"></a>
+      <a href="https://fr.pinterest.com/kiabi/"> <img src="image/pinterest2.png" class="ress"></a>
+      <a href="https://www.facebook.com/pages/Kiabi-la-mode-a-petits-prix/239230237954 "> <img src="image/fb3.png" class="ress"></a>
+      <a href="https://twitter.com/KiabiFrance"> <img src="image/twitter.png" class="ress"></a>
+      </div class="social">
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>KIABI
+            </h6>
+            <p>
+              Kiabi vous accompagne et vous conseille
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Découvrir</h6>
+            
+              
+              </br>
+                <a class="nav-link dropdown-toggle mb-3" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false"> Nos t-shirts
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="pagenfant.html">Enfants</a>
+                  </li>
+                </ul>
+            <p>
+              <a href="pagenosbonsplans.html" class="text-reset">Nos bons plans</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Support</h6>
+            <p>
+              <a href="#!" class="text-reset">Aide</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">F.A.Q</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Mentions Légales</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Contact</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i>4 Rue Camille Desmoulins, 75011 Paris</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              kiabi@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i>09 73 21 99 84</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4 fw-bold" style="background-color: #151028; color: white;">
+      © 2023 KIABI
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/"></a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</body>
+
+</html>
